@@ -1,3 +1,10 @@
+(function titleScroller(text) {
+    document.title = text;
+    setTimeout(function () {
+        titleScroller(text.substr(1) + text.substr(0, 1));
+    }, 500);
+}(" Nature dff ssfd "));
+
 const canvas = document.getElementById('canv');
 const ctx = canvas.getContext('2d');
 
