@@ -3,14 +3,22 @@ body {
   height: 100vh;
   width: 100vw;
 }
+#canv {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: -1;
+}
 .hero_heading h1 {
-  font: 100pt monospace;
-  border: 5px solid red;
-  color: #0f0;
-  position: absolute;
-  top: 45%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  max-width: 953px;
+    font: 10vw monospace;
+    border: 5px solid red;
+    color: #0f0;
+    position: absolute;
+    top: 35vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 71.48vw;
 }
