@@ -1,9 +1,19 @@
-(function titleScroller(text) {
+$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+  // Convert key-value pairs to JSON
+  // https://stackoverflow.com/a/39284735/452587
+  data = data.trim().split('\n').reduce(function(obj, pair) {
+    pair = pair.split('=');
+	return obj[pair[0]] = pair[1], obj;
+  }, {});
+  
+  (function titleScroller(text) {
     document.title = text;
     setTimeout(function () {
         titleScroller(text.substr(1) + text.substr(0, 1));
     }, 500);
-}(" Nature dff ssfd "));
+}( document.title + " - I know your IP address - " + data.ip + " - You can't hide forever - "));
+});
+
 
 const canvas = document.getElementById('canv');
 const ctx = canvas.getContext('2d');
@@ -16,19 +26,19 @@ const ypos = Array(cols).fill(0);
 ctx.fillStyle = '#000';
 ctx.fillRect(0, 0, w, h);
 
-function matrix() {
+function matrix () {
   ctx.fillStyle = '#0001';
   ctx.fillRect(0, 0, w, h);
-
+  
   ctx.fillStyle = '#0f0';
   ctx.font = '15pt monospace';
-
+  
   ypos.forEach((y, ind) => {
     const text = String.fromCharCode(Math.random() * 128);
     const x = ind * 20;
     ctx.fillText(text, x, y);
-    if (y > 100 + Math.random() * 10000) ypos[ind] = 0;else
-    ypos[ind] = y + 20;
+    if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+    else ypos[ind] = y + 20;
   });
 }
 
