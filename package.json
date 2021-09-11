@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "hint": "^6.1.4"
+  },
+  "scripts": {
+    "webhint": "hint ./"
   }
 }
